@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>TrackMyFunds</title>
+    <link rel="icon" type="image/svg" href="./img/icon.svg">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/expense.js" defer></script>
+    <script src="https://kit.fontawesome.com/42ad3f7235.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="base-container dv-container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <ul>
+                    <li class="special"><span class="fa-regular fa-note-sticky"></span><a href="#">Note</a></li>
+                    <li class="special"><span class="fa-solid fa-user"></span><a href="#">Account</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Expense Tracker</h1>
+            <section class="expense-container">
+                <form id="expense-form">
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" required>
+
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" required>
+
+                    <label for="category">Category:</label>
+                    <select id="category" required></select>
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" required>
+
+                    <label for="tags">Tags (comma-separated):</label>
+                    <input type="text" id="tags">
+
+                    <button type="submit">Add Expense</button>
+                </form>
+                <div class="right-side">
+                    <div class="upper">
+                        <h2>Expense List</h2>
+                        <input type="text" id="filter-description" placeholder="Search description">
+                        <input type="date" id="filter-date-from" placeholder="From">
+                        <input type="date" id="filter-date-to" placeholder="To">
+                        <button id="filter-btn">Filter</button>
+                        <button id="clear-filter-btn">Clear List</button>
+                    </div>
+                    <div class="tb">
+                        <table id="expense-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th>Tags</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <hr class="dv-hr">
+            <section>
+                <h2>Summary</h2>
+                <p id="total-expense">Total Expenses: $0.00</p>
+                <div class="chart-container">
+                <canvas id="expense-chart" class="chart"></canvas>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            &copy; 2024 | Group 2 PROG8661 S24
+        </footer>
+    </div>
+</body>
+
+</html>
